@@ -1,4 +1,5 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
@@ -9,7 +10,10 @@ const SingleDashboardCourse = ({
   course: any;
   onDelete: any;
 }) => {
-  const { _id, title, company, location, type, salary, description } = course;
+  const { user } = useAuth();
+
+  const { _id, email, title, company, location, type, salary, description } =
+    course;
   const token = localStorage.getItem("token");
 
   const handleDelete = async () => {
@@ -53,12 +57,21 @@ const SingleDashboardCourse = ({
             </button>
           </Link>
           {/* TODO: use conditional operator to show edit and delete button if login user email and course user email same then show edit button otherwise do not */}
-          <Link href={`all-course/edit/${_id}`}>
-            <button className="btn bg-green-600 text-white">Edit</button>
-          </Link>
-          <button onClick={handleDelete} className="btn bg-red-500 text-white">
-            Delete
-          </button>
+          {user?.email === email ? (
+            <>
+              <Link href={`all-course/edit/${_id}`}>
+                <button className="btn bg-green-600 text-white">Edit</button>
+              </Link>
+              <button
+                onClick={handleDelete}
+                className="btn bg-red-500 text-white"
+              >
+                Delete
+              </button>
+            </>
+          ) : (
+            <button className="btn btn-accent">Enroll</button>
+          )}
         </div>
       </div>
     </div>

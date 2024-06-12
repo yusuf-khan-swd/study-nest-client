@@ -9,7 +9,7 @@ const CourseCard = ({ course }: { course: any }) => {
         <h2 className="card-title">Course Title: {title}</h2>
         <p>Duration: {duration}</p>
         <p className="font-semibold">Instructor: {instructor}</p>
-        <p className="font-semibold">Price: {price}</p>
+        <p className="font-semibold">Price: ${price}</p>
         <p>
           Description:{" "}
           {description?.length < 250

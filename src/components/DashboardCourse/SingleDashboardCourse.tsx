@@ -51,11 +51,6 @@ const SingleDashboardCourse = ({
         <p className="font-semibold">Salary: {salary}</p>
         <p>Description: {description.slice(0, 255) + "..."}</p>
         <div className="card-actions justify-end">
-          <Link href={`/course/view/${_id}`}>
-            <button className="btn bg-indigo-500 text-white">
-              See details
-            </button>
-          </Link>
           {user?.email === email ? (
             <>
               <Link href={`all-course/edit/${_id}`}>
@@ -71,6 +66,11 @@ const SingleDashboardCourse = ({
           ) : (
             <button className="btn btn-accent">Enroll</button>
           )}
+          <Link href={`/course/view/${_id}`}>
+            <button className="btn bg-indigo-500 text-white">
+              See details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

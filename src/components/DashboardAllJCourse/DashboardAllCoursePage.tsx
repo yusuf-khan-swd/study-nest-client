@@ -4,29 +4,29 @@ import { useEffect, useState } from "react";
 import SingleDashboardCourse from "./SingleDashboardCourse";
 
 const DashboardAllCoursePage = () => {
-  const [jobs, setJobs] = useState<null | any>([]);
+  const [course, setCourse] = useState<null | any>([]);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
     fetch(`${baseUrl}/course`)
       .then((res) => res.json())
-      .then((data) => setJobs(data));
+      .then((data) => setCourse(data));
   }, []);
 
-  const handleDeleteJob = (id: string) => {
-    setJobs(jobs.filter((job: any) => job._id !== id));
+  const handleDeleteCourse = (id: string) => {
+    setCourse(course.filter((course: any) => course._id !== id));
   };
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-center mb-2">All Jobs</h1>
+      <h1 className="text-3xl font-bold text-center mb-2">All Course</h1>
       <div className="mb-16 flex justify-center flex-wrap gap-4">
-        {jobs.map((job: any) => (
+        {course.map((course: any) => (
           <SingleDashboardCourse
-            key={job?.id}
-            course={job}
-            onDelete={handleDeleteJob}
+            key={course?.id}
+            course={course}
+            onDelete={handleDeleteCourse}
           />
         ))}
       </div>

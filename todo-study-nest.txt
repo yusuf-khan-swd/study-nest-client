@@ -1,4 +1,6 @@
 
+[solved] - After deploy frontend there is cors error
+
 Done - Configure frontend and backed of the project. And deploy both fronted and backend to vercel 
 
 Done - Add vercel client domain to firebase authorize domain for logins

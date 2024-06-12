@@ -2,6 +2,7 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
+import { FirebaseError } from "firebase/app";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -30,32 +31,37 @@ const RegisterPage = () => {
     console.log(email, password, confirm_password);
 
     if (password === confirm_password) {
-      createUser(email, password).then((data: any) => {
-        if (data?.user?.email) {
-          const email = data?.user?.email;
-          const user = { email, name };
+      createUser(email, password)
+        .then((data: any) => {
+          if (data?.user?.email) {
+            const email = data?.user?.email;
+            const user = { email, name };
 
-          const baseUrl = getBaseUrl();
+            const baseUrl = getBaseUrl();
 
-          fetch(`${baseUrl}/users`, {
-            method: "POST",
-            headers: {
-              "Content-type": "application/json",
-            },
-            body: JSON.stringify(user),
-          })
-            .then((res) => res.json())
-            .then((result) => {
-              if (result?.data) {
-                toast.success("Registration Success!");
-                localStorage.setItem("token", result?.data?.token);
-                router.push("/");
-              } else {
-                toast.error("Login Failed!");
-              }
-            });
-        }
-      });
+            fetch(`${baseUrl}/users`, {
+              method: "POST",
+              headers: {
+                "Content-type": "application/json",
+              },
+              body: JSON.stringify(user),
+            })
+              .then((res) => res.json())
+              .then((result) => {
+                if (result?.data) {
+                  toast.success("Registration Success!");
+                  localStorage.setItem("token", result?.data?.token);
+                  router.push("/");
+                } else {
+                  toast.error("Login Failed!");
+                }
+              });
+          }
+        })
+        .catch((error: FirebaseError) => {
+          toast.error(error?.message);
+          console.log(error);
+        });
     }
   };
 

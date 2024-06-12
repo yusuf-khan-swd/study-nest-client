@@ -4,5 +4,5 @@ Then Deploy to vercel
 add firebase config to vercel 
 Done - add firebase config to project
 
-
+Done - Add server deployed link from vercel to getBaseUrl() function
 Done - Deploy server side to vercel

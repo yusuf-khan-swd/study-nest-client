@@ -49,9 +49,9 @@ const AddCoursePage = () => {
       const result = await res.json();
 
       if (result) {
-        toast.success("Jobs added successfully");
+        toast.success("Course added successfully");
       } else {
-        toast.error("Jobs added failed!");
+        toast.error("Course added failed!");
       }
 
       form.reset();
@@ -60,14 +60,14 @@ const AddCoursePage = () => {
 
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center mt-4 mb-6">Add a Job</h1>
+      <h1 className="text-5xl font-bold text-center mt-4 mb-6">Add a Course</h1>
       <div className="card shadow-xl bg-base-200">
         <div className="card-body">
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Job Title
+                  <span className="text-red-500 mr-1">*</span>Course Title
                 </span>
               </label>
               <input
@@ -108,13 +108,13 @@ const AddCoursePage = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Job Type
+                  <span className="text-red-500 mr-1">*</span>Course Type
                 </span>
               </label>
               <input
                 type="text"
                 name="type"
-                placeholder="Job Type"
+                placeholder="Course Type"
                 className="input input-bordered"
                 required
               />
@@ -152,7 +152,7 @@ const AddCoursePage = () => {
               <input
                 className="btn mt-4 w-full btn-primary text-white p-4"
                 type="submit"
-                value="Add This Job"
+                value="Add This Course"
               />
             </div>
           </form>

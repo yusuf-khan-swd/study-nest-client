@@ -1,4 +1,4 @@
-import DashboardAllCoursePage from "@/components/DashboardAllJCourse/DashboardAllCoursePage";
+import DashboardAllCoursePage from "@/components/DashboardCourse/DashboardAllCoursePage";
 
 const DashboardAllCourse = () => {
   return <DashboardAllCoursePage />;

@@ -1,4 +1,4 @@
-import EditCoursePage from "@/components/DashboardAllJCourse/EditJCoursePage";
+import EditCoursePage from "@/components/DashboardCourse/EditJCoursePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

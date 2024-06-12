@@ -16,11 +16,11 @@ const AddCoursePage = () => {
     if (proceedToAdd) {
       const form = e.target;
 
-      const title = form?.title?.value;
-      const duration = form?.duration?.value;
-      const instructor = form?.instructor?.value;
-      const price = form?.price?.value;
-      const description = form?.description?.value;
+      const title = form?.title?.value.trim();
+      const duration = form?.duration?.value.trim();
+      const instructor = form?.instructor?.value.trim();
+      const price = form?.price?.value.trim();
+      const description = form?.description?.value.trim();
 
       const email = user?.email;
 

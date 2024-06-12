@@ -45,11 +45,15 @@ const CoursePage = () => {
           onChange={(e: any) => handleSearch(e.target.value)}
         />
       </div>
-      <div className="grid grid-cols-1 gap-4">
-        {course.map((course: any) => (
-          <CourseCard key={course?.id} course={course} />
-        ))}
-      </div>
+      {!course || course?.length <= 0 ? (
+        <h2 className="text-center text-2xl my-3">No course available</h2>
+      ) : (
+        <div className="grid grid-cols-1 gap-4">
+          {course.map((course: any) => (
+            <CourseCard key={course?.id} course={course} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

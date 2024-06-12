@@ -19,7 +19,7 @@ const AddCoursePage = () => {
       const title = form?.title?.value.trim();
       const duration = form?.duration?.value.trim();
       const instructor = form?.instructor?.value.trim();
-      const price = form?.price?.value.trim();
+      const price = form?.price?.value;
       const description = form?.description?.value.trim();
 
       const email = user?.email;
@@ -97,7 +97,7 @@ const AddCoursePage = () => {
                 </span>
               </label>
               <input
-                type="text"
+                type="number"
                 name="price"
                 placeholder="Price"
                 className="input input-bordered"

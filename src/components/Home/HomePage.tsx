@@ -26,7 +26,7 @@ const HomePage = () => {
           <h1 className="text-3xl font-bold mb-3 text-center">Recent Jobs</h1>
           <div className="grid grid-cols-1 gap-4">
             {jobs.slice(0, 2).map((job: any) => (
-              <CourseCard key={job?.id} job={job} />
+              <CourseCard key={job?.id} course={job} />
             ))}
           </div>
           <Features />

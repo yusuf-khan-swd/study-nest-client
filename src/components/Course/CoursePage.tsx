@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
 
 const CoursePage = () => {
-  const [jobs, setJobs] = useState<null | any>([]);
-  const [prevJobs, setPrevJobs] = useState<null | any>([]);
+  const [course, setCourse] = useState<null | any>([]);
+  const [prevCourse, setPrevCourse] = useState<null | any>([]);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
@@ -14,20 +14,20 @@ const CoursePage = () => {
     fetch(`${baseUrl}/course`)
       .then((res) => res.json())
       .then((data) => {
-        setJobs(data);
-        setPrevJobs(data);
+        setCourse(data);
+        setPrevCourse(data);
       });
   }, []);
 
   // Search is case sensitive
   const handleSearch = (value: any) => {
     if (value) {
-      const filteredJobs = jobs.filter((job: any) =>
-        job.title.toUpperCase().includes(value.toUpperCase())
+      const filteredJobs = course.filter((course: any) =>
+        course.title.toUpperCase().includes(value.toUpperCase())
       );
-      setJobs(filteredJobs);
+      setCourse(filteredJobs);
     } else {
-      setJobs(prevJobs);
+      setCourse(prevCourse);
     }
   };
 
@@ -46,8 +46,8 @@ const CoursePage = () => {
         />
       </div>
       <div className="grid grid-cols-1 gap-4">
-        {jobs.map((job: any) => (
-          <CourseCard key={job?.id} job={job} />
+        {course.map((course: any) => (
+          <CourseCard key={course?.id} course={course} />
         ))}
       </div>
     </div>

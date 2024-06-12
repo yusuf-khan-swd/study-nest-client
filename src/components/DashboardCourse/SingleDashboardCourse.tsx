@@ -48,7 +48,12 @@ const SingleDashboardCourse = ({
         <p>Duration: {duration}</p>
         <p className="font-semibold">Instructor: {instructor}</p>
         <p className="font-semibold">Price: {price}</p>
-        <p>Description: {description.slice(0, 255) + "..."}</p>
+        <p>
+          Description:{" "}
+          {description?.length < 250
+            ? description
+            : description.slice(0, 255) + "..."}
+        </p>
         <div className="card-actions justify-end">
           {user?.email === email ? (
             <>

@@ -24,11 +24,15 @@ const HomePage = () => {
       <div className="mt-12 container mx-auto">
         <div className="m-2">
           <h1 className="text-3xl font-bold mb-3 text-center">Recent Course</h1>
-          <div className="grid grid-cols-1 gap-4">
-            {course.slice(0, 2).map((course: any) => (
-              <CourseCard key={course?.id} course={course} />
-            ))}
-          </div>
+          {!course || course?.length <= 0 ? (
+            <h2 className="text-center text-2xl my-3">No course available</h2>
+          ) : (
+            <div className="grid grid-cols-1 gap-4">
+              {course.slice(0, 2).map((course: any) => (
+                <CourseCard key={course?.id} course={course} />
+              ))}
+            </div>
+          )}
           <Features />
           <Statics />
         </div>

@@ -32,8 +32,13 @@ const DashboardPage = () => {
   return (
     <div>
       <div className="flex justify-between mb-4">
-        <h1 className="text-3xl font-semibold">Profile Information</h1>
-        <Link href={`/profile/edit/${userInfo?._id}`} className="btn btn-info">
+        <h1 className="text-xl md:text-3xl font-semibold">
+          Profile Information
+        </h1>
+        <Link
+          href={`/profile/edit/${userInfo?._id}`}
+          className="btn btn-info btn-sm md:btn-md"
+        >
           Edit Profile
         </Link>
       </div>

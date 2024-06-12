@@ -18,19 +18,17 @@ const AddCoursePage = () => {
 
       const title = form?.title?.value;
       const duration = form?.duration?.value;
-      const type = form?.type?.value;
-      const location = form?.location?.value;
-      const salary = form?.salary?.value;
+      const instructor = form?.instructor?.value;
+      const price = form?.price?.value;
       const description = form?.description?.value;
 
       const email = user?.email;
 
       const data = {
         title,
-        company: duration,
-        type,
-        location,
-        salary,
+        duration,
+        instructor,
+        price,
         description,
         email,
       };
@@ -95,26 +93,13 @@ const AddCoursePage = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Location
+                  <span className="text-red-500 mr-1">*</span>Price
                 </span>
               </label>
               <input
                 type="text"
-                name="location"
-                placeholder="Location"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Course Type
-                </span>
-              </label>
-              <input
-                type="text"
-                name="type"
-                placeholder="Course Type"
+                name="price"
+                placeholder="Price"
                 className="input input-bordered"
                 required
               />
@@ -122,18 +107,16 @@ const AddCoursePage = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Salary
+                  <span className="text-red-500 mr-1">*</span>Instructor
                 </span>
               </label>
               <input
                 type="text"
-                name="salary"
-                placeholder="Salary"
+                name="instructor"
+                placeholder="Instructor"
                 className="input input-bordered"
-                required
               />
             </div>
-
             <div className="form-control">
               <label className="label">
                 <span className="label-text">

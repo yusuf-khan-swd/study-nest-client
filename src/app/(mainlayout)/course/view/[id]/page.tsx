@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Update Jobs Profile - Study Nest",
-  description: "A Job Posting Platform",
+  description: "A Course Posting and Enroll Platform",
 };
 
 const ViewJobs = ({ params }: { params: { id: string } }) => {

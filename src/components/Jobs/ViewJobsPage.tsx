@@ -12,7 +12,7 @@ const ViewJobsPage = ({ id }: { id: string }) => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/jobs/${id}`)
+    fetch(`${baseUrl}/course/${id}`)
       .then((res) => res.json())
       .then((result) => {
         if (result) {

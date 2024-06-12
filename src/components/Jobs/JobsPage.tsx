@@ -11,7 +11,7 @@ const JobsPage = () => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/jobs`)
+    fetch(`${baseUrl}/course`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);

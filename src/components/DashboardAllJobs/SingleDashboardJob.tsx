@@ -12,7 +12,7 @@ const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
     if (proceedToDelete) {
       const baseUrl = getBaseUrl();
 
-      const res = await fetch(`${baseUrl}/jobs/${_id}`, {
+      const res = await fetch(`${baseUrl}/course/${_id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -12,7 +12,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/jobs/${id}`)
+    fetch(`${baseUrl}/course/${id}`)
       .then((res) => res.json())
       .then((result) => {
         if (result) {
@@ -46,7 +46,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
 
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/jobs/${id}`, {
+    fetch(`${baseUrl}/course/${id}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,

@@ -37,7 +37,7 @@ const AddJobsPage = () => {
 
       const baseUrl = getBaseUrl();
 
-      const res = await fetch(`${baseUrl}/jobs`, {
+      const res = await fetch(`${baseUrl}/course`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

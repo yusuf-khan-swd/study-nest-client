@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Study Nest",
-  description: "A job searching website",
+  description: "A Course Posting and Enroll Platform",
 };
 
 export default function RootLayout({

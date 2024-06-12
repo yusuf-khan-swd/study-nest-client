@@ -23,13 +23,13 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         <Link href="/dashboard">Dashboard</Link>
       </li>
       <li>
-        <Link href="/add-course">Add Course</Link>
+        <Link href="/all-course">All Course</Link>
       </li>
       <li>
         <Link href="/my-course">My Course</Link>
       </li>
       <li>
-        <Link href="/all-course">All Course</Link>
+        <Link href="/add-course">Add Course</Link>
       </li>
     </>
   );

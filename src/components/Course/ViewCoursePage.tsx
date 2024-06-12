@@ -4,7 +4,7 @@ import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const ViewJobsPage = ({ id }: { id: string }) => {
+const ViewCoursePage = ({ id }: { id: string }) => {
   const [jobInfo, setJobInfo] = useState<null | any>({});
 
   const { title, company, location, type, salary, description } = jobInfo;
@@ -40,4 +40,4 @@ const ViewJobsPage = ({ id }: { id: string }) => {
   );
 };
 
-export default ViewJobsPage;
+export default ViewCoursePage;

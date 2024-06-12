@@ -2,9 +2,9 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
-import JobCard from "./JobCard";
+import CourseCard from "./CourseCard";
 
-const JobsPage = () => {
+const CoursePage = () => {
   const [jobs, setJobs] = useState<null | any>([]);
   const [prevJobs, setPrevJobs] = useState<null | any>([]);
 
@@ -47,11 +47,11 @@ const JobsPage = () => {
       </div>
       <div className="grid grid-cols-1 gap-4">
         {jobs.map((job: any) => (
-          <JobCard key={job?.id} job={job} />
+          <CourseCard key={job?.id} job={job} />
         ))}
       </div>
     </div>
   );
 };
 
-export default JobsPage;
+export default CoursePage;

@@ -1,9 +1,9 @@
-import JobsPage from "@/components/Jobs/JobsPage";
+import CoursePage from "@/components/Course/CoursePage";
 
 const page = () => {
   return (
     <div>
-      <JobsPage />
+      <CoursePage />
     </div>
   );
 };

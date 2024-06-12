@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const JobCard = ({ job }: { job: any }) => {
+const CourseCard = ({ job }: { job: any }) => {
   const { _id, title, company, location, type, salary, description } = job;
 
   return (
@@ -29,4 +29,4 @@ const JobCard = ({ job }: { job: any }) => {
   );
 };
 
-export default JobCard;
+export default CourseCard;

@@ -1,4 +1,4 @@
-import ViewJobsPage from "@/components/Jobs/ViewJobsPage";
+import ViewCoursePage from "@/components/Course/ViewCoursePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ const ViewJobs = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   return (
     <div>
-      <ViewJobsPage id={id} />
+      <ViewCoursePage id={id} />
     </div>
   );
 };

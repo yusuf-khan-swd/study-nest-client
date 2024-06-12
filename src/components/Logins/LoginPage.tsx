@@ -2,6 +2,7 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
+import { FirebaseError } from "firebase/app";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
@@ -20,32 +21,37 @@ const LoginPage = () => {
 
     console.log(email, password);
 
-    signIn(email, password).then((data: any) => {
-      if (data?.user?.email) {
-        const email = data?.user?.email;
-        const user = { email };
+    signIn(email, password)
+      .then((data: any) => {
+        if (data?.user?.email) {
+          const email = data?.user?.email;
+          const user = { email };
 
-        const baseUrl = getBaseUrl();
+          const baseUrl = getBaseUrl();
 
-        fetch(`${baseUrl}/users`, {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            if (result?.data) {
-              toast.success("Login Success");
-              localStorage.setItem("token", result?.data?.token);
-              router.push("/");
-            } else {
-              toast.error("Login Failed!");
-            }
-          });
-      }
-    });
+          fetch(`${baseUrl}/users`, {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              if (result?.data) {
+                toast.success("Login Success");
+                localStorage.setItem("token", result?.data?.token);
+                router.push("/");
+              } else {
+                toast.error("Login Failed!");
+              }
+            });
+        }
+      })
+      .catch((error: FirebaseError) => {
+        toast.error(error?.message);
+        console.log(error);
+      });
   };
 
   return (

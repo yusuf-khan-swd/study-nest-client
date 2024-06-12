@@ -18,7 +18,7 @@ const CourseCard = ({ course }: { course: any }) => {
             : description.slice(0, 255) + "..."}
         </p>
         <div className="card-actions justify-end">
-          <Link href={`/jobs/view/${_id}`}>
+          <Link href={`/course/view/${_id}`}>
             <button className="btn bg-indigo-500 text-white">
               See details
             </button>

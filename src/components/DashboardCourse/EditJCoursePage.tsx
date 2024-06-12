@@ -149,7 +149,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
               <input
                 className="btn mt-4 w-full btn-primary text-white p-4"
                 type="submit"
-                value="Add This Course"
+                value="Update This Course"
               />
             </div>
           </form>

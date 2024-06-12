@@ -52,6 +52,7 @@ const SingleDashboardCourse = ({
               See details
             </button>
           </Link>
+          {/* TODO: use conditional operator to show edit and delete button if login user email and course user email same then show edit button otherwise do not */}
           <Link href={`all-course/edit/${_id}`}>
             <button className="btn bg-green-600 text-white">Edit</button>
           </Link>

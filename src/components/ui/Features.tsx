@@ -12,7 +12,7 @@ const Features = () => {
             <span className="relative inline-block">
               <span className="relative">Discover</span>
             </span>{" "}
-            exciting career opportunities tailored just for you.{" "}
+            exciting study opportunities tailored just for you.{" "}
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
             Explore job listings from top companies across industries, and take

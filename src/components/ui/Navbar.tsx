@@ -6,7 +6,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
-  const websiteName = "CareerNest";
+  const websiteName = "StudyNest";
 
   const { logout, user } = useAuth();
 

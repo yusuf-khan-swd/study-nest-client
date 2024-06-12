@@ -2,10 +2,10 @@ const AboutPage = () => {
   return (
     <div className="min-h-[80vh] container mx-auto max-w-[750px] mt-8">
       <div className="mb-5">
-        <h1 className="text-3xl font-bold mb-2">Welcome to Career Nest</h1>
+        <h1 className="text-3xl font-bold mb-2">Welcome to Study Nest</h1>
         <p style={{ lineHeight: "28px" }}>
-          Welcome to Career Nest, your trusted partner in the journey to find
-          the perfect job or the ideal candidate. Career Nest is dedicated to
+          Welcome to Study Nest, your trusted partner in the journey to find the
+          perfect job or the ideal candidate. Study Nest is dedicated to
           bridging the gap between employers and job seekers, making the
           recruitment process smoother, faster, and more efficient.
         </p>
@@ -13,11 +13,11 @@ const AboutPage = () => {
       <div className="mb-5">
         <h1 className="text-3xl font-bold mb-2">Our Mission</h1>
         <p style={{ lineHeight: "28px" }}>
-          At Career Nest, our mission is to connect talented individuals with
+          At Study Nest, our mission is to connect talented individuals with
           great companies. We strive to create a user-friendly platform that
           simplifies the job search and hiring process, ensuring that employers
           find the right talent and job seekers find opportunities that match
-          their skills and career aspirations.{" "}
+          their skills and study aspirations.{" "}
         </p>
       </div>
       <div className="mb-5">
@@ -33,9 +33,8 @@ const AboutPage = () => {
         <p style={{ lineHeight: "28px" }}>
           For Job Seekers: We provide a comprehensive job search experience,
           offering access to thousands of job listings from top employers across
-          various industries. Our advanced search filters, job alerts, and
-          career resources help you find jobs that match your skills and
-          preferences.
+          various industries. Our advanced search filters, job alerts, and study
+          resources help you find jobs that match your skills and preferences.
         </p>
       </div>
     </div>

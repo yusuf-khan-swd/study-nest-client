@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Footer = () => {
-  const websiteName = "CareerNest";
+  const websiteName = "StudyNest";
 
   const date = new Date().getFullYear();
 

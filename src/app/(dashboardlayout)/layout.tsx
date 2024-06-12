@@ -9,7 +9,7 @@ import React from "react";
 import toast from "react-hot-toast";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  const websiteName = "CareerNest";
+  const websiteName = "StudyNest";
   const { logout, user, loading } = useAuth();
   const router = useRouter();
 

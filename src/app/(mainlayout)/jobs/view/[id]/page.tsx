@@ -2,7 +2,7 @@ import ViewJobsPage from "@/components/Jobs/ViewJobsPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Update Jobs Profile - Career Nest",
+  title: "Update Jobs Profile - Study Nest",
   description: "A Job Posting Platform",
 };
 

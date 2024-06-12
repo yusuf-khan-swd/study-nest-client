@@ -22,7 +22,7 @@ const DashboardMyCoursePage = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-center mb-2">All Course</h1>
+      <h1 className="text-3xl font-bold text-center mb-2">My Course</h1>
       {!course || course?.length <= 0 ? (
         <h2 className="text-center text-2xl my-3">No course available</h2>
       ) : (

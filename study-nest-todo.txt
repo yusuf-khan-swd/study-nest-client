@@ -1,4 +1,6 @@
 
+Done - Configure frontend and backed of the project. And deploy both fronted and backend to vercel 
+
 Done - Add vercel client domain to firebase authorize domain for logins
 Done - add firebase config to vercel 
 Done - Deploy frontend to vercel - deploy will failed because of firebase auth config is not added

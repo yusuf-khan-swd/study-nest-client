@@ -1,5 +1,5 @@
 
-Add vercel client domain to firebase authorize domain for logins
+Done - Add vercel client domain to firebase authorize domain for logins
 Done - add firebase config to vercel 
 Done - Deploy frontend to vercel - deploy will failed because of firebase auth config is not added
 Done - add firebase config to project

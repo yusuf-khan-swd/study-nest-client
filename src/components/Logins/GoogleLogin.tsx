@@ -1,5 +1,6 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
+import { FirebaseError } from "firebase/app";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
@@ -9,34 +10,39 @@ const GoogleLogin = () => {
   const router = useRouter();
 
   const handleGoogleSignIn = () => {
-    googleLogin().then((data: any) => {
-      if (data?.user?.email) {
-        toast.success("Login success");
-        const email = data?.user?.email;
-        const name = data?.user?.displayName;
-        const user = { email, name };
+    googleLogin()
+      .then((data: any) => {
+        if (data?.user?.email) {
+          toast.success("Login success");
+          const email = data?.user?.email;
+          const name = data?.user?.displayName;
+          const user = { email, name };
 
-        const baseUrl = getBaseUrl();
+          const baseUrl = getBaseUrl();
 
-        fetch(`${baseUrl}/users`, {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            if (result?.data) {
-              toast.success("Google Login Success");
-              localStorage.setItem("token", result?.data?.token);
-              router.push("/");
-            } else {
-              toast.error("Login Failed!");
-            }
-          });
-      }
-    });
+          fetch(`${baseUrl}/users`, {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              if (result?.data) {
+                toast.success("Google Login Success");
+                localStorage.setItem("token", result?.data?.token);
+                router.push("/");
+              } else {
+                toast.error("Login Failed!");
+              }
+            });
+        }
+      })
+      .catch((error: FirebaseError) => {
+        toast.error(error?.message);
+        console.log(error);
+      });
   };
 
   return (

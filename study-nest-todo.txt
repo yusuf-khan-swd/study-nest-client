@@ -1,7 +1,7 @@
 
 Add vercel client domain to firebase authorize domain for logins
-Then Deploy to vercel
 add firebase config to vercel 
+Deploy frontend to vercel - deploy will failed because of firebase auth config is not added
 Done - add firebase config to project
 
 Done - Add server deployed link from vercel to getBaseUrl() function

@@ -22,10 +22,10 @@ const CoursePage = () => {
   // Search is case sensitive
   const handleSearch = (value: any) => {
     if (value) {
-      const filteredJobs = course.filter((course: any) =>
+      const filteredCourse = course.filter((course: any) =>
         course.title.toUpperCase().includes(value.toUpperCase())
       );
-      setCourse(filteredJobs);
+      setCourse(filteredCourse);
     } else {
       setCourse(prevCourse);
     }
@@ -33,7 +33,7 @@ const CoursePage = () => {
 
   return (
     <div className="m-2 container mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-2">All Jobs</h1>
+      <h1 className="text-3xl font-bold text-center mb-2">All Course</h1>
       <div className="form-control mb-4">
         <label className="label">
           <span className="label-text">Search</span>

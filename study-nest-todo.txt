@@ -1,6 +1,8 @@
 
-
 Add vercel client domain to firebase authorize domain for logins
 Then Deploy to vercel
 add firebase config to vercel 
 Done - add firebase config to project
+
+
+Done - Deploy server side to vercel

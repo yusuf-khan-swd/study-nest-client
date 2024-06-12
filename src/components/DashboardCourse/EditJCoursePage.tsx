@@ -7,6 +7,8 @@ import toast from "react-hot-toast";
 const EditCoursePage = ({ id }: { id: string }) => {
   const [courseInfo, setCourseInfo] = useState<null | any>({});
 
+  const { title, duration, instructor, price, description } = courseInfo;
+
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -28,19 +30,17 @@ const EditCoursePage = ({ id }: { id: string }) => {
 
     const form = e.target;
 
-    const title = form?.title?.value;
-    const company = form?.company?.value;
-    const type = form?.type?.value;
-    const location = form?.location?.value;
-    const salary = form?.salary?.value;
-    const description = form?.description?.value;
+    const title = form?.title?.value.trim();
+    const duration = form?.duration?.value.trim();
+    const instructor = form?.instructor?.value.trim();
+    const price = form?.price?.value;
+    const description = form?.description?.value.trim();
 
     const courseData = {
       title,
-      company,
-      type,
-      location,
-      salary,
+      duration,
+      instructor,
+      price,
       description,
     };
 
@@ -78,7 +78,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
                 </span>
               </label>
               <input
-                defaultValue={courseInfo?.title}
+                defaultValue={title}
                 type="text"
                 name="title"
                 placeholder="Title"
@@ -89,14 +89,14 @@ const EditCoursePage = ({ id }: { id: string }) => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Company Name
+                  <span className="text-red-500 mr-1">*</span>Duration
                 </span>
               </label>
               <input
-                defaultValue={courseInfo?.company}
+                defaultValue={duration}
                 type="text"
-                name="company"
-                placeholder="Company Name"
+                name="duration"
+                placeholder="Duration"
                 className="input input-bordered"
                 required
               />
@@ -104,28 +104,14 @@ const EditCoursePage = ({ id }: { id: string }) => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Location
+                  <span className="text-red-500 mr-1">*</span>Price
                 </span>
               </label>
               <input
-                defaultValue={courseInfo?.location}
-                type="text"
-                name="location"
-                placeholder="Location"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Course Type
-                </span>
-              </label>
-              <input
-                defaultValue={courseInfo?.type}
-                type="text"
-                name="type"
-                placeholder="Course Type"
+                defaultValue={price}
+                type="number"
+                name="price"
+                placeholder="Price"
                 className="input input-bordered"
                 required
               />
@@ -133,16 +119,15 @@ const EditCoursePage = ({ id }: { id: string }) => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Salary
+                  <span className="text-red-500 mr-1">*</span>Instructor
                 </span>
               </label>
               <input
-                defaultValue={courseInfo?.salary}
+                defaultValue={instructor}
                 type="text"
-                name="salary"
-                placeholder="Salary"
+                name="instructor"
+                placeholder="Instructor"
                 className="input input-bordered"
-                required
               />
             </div>
             <div className="form-control">
@@ -152,7 +137,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
                 </span>
               </label>
               <textarea
-                defaultValue={courseInfo?.description}
+                defaultValue={description}
                 name="description"
                 placeholder="Description"
                 className="textarea textarea-bordered p-2"
@@ -164,7 +149,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
               <input
                 className="btn mt-4 w-full btn-primary text-white p-4"
                 type="submit"
-                value="Update Course"
+                value="Add This Course"
               />
             </div>
           </form>

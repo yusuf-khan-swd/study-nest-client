@@ -12,7 +12,7 @@ const SingleDashboardCourse = ({
 }) => {
   const { user } = useAuth();
 
-  const { _id, email, title, company, location, type, salary, description } =
+  const { _id, email, title, duration, instructor, price, description } =
     course;
   const token = localStorage.getItem("token");
 
@@ -45,10 +45,9 @@ const SingleDashboardCourse = ({
     <div className="card w-full bg-base-100 shadow-xl border">
       <div className="card-body">
         <h2 className="card-title">Course Title: {title}</h2>
-        <p>Company: {company}</p>
-        <p className="font-semibold">Location: {location}</p>
-        <p>Course Type: {type}</p>
-        <p className="font-semibold">Salary: {salary}</p>
+        <p>Duration: {duration}</p>
+        <p className="font-semibold">Instructor: {instructor}</p>
+        <p className="font-semibold">Price: {price}</p>
         <p>Description: {description.slice(0, 255) + "..."}</p>
         <div className="card-actions justify-end">
           {user?.email === email ? (

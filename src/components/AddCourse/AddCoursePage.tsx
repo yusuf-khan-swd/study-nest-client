@@ -17,7 +17,7 @@ const AddCoursePage = () => {
       const form = e.target;
 
       const title = form?.title?.value;
-      const company = form?.company?.value;
+      const duration = form?.duration?.value;
       const type = form?.type?.value;
       const location = form?.location?.value;
       const salary = form?.salary?.value;
@@ -27,7 +27,7 @@ const AddCoursePage = () => {
 
       const data = {
         title,
-        company,
+        company: duration,
         type,
         location,
         salary,
@@ -81,13 +81,13 @@ const AddCoursePage = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Company Name
+                  <span className="text-red-500 mr-1">*</span>Duration
                 </span>
               </label>
               <input
                 type="text"
-                name="company"
-                placeholder="Company Name"
+                name="duration"
+                placeholder="Duration"
                 className="input input-bordered"
                 required
               />

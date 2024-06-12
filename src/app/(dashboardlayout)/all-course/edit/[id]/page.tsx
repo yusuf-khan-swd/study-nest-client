@@ -2,11 +2,11 @@ import EditCoursePage from "@/components/DashboardAllJCourse/EditJCoursePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Update Jobs Profile - Study Nest",
-  description: "A Job Posting Platform",
+  title: "Update Course - Study Nest",
+  description: "A Course Posting and Enroll Platform",
 };
 
-const EditJobs = ({ params }: { params: { id: string } }) => {
+const EditCourse = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   return (
     <div>
@@ -15,4 +15,4 @@ const EditJobs = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default EditJobs;
+export default EditCourse;

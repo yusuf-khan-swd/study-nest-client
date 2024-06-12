@@ -1,7 +1,7 @@
 import DashboardAllCoursePage from "@/components/DashboardAllJCourse/DashboardAllCoursePage";
 
-const DashboardAllJobs = () => {
+const DashboardAllCourse = () => {
   return <DashboardAllCoursePage />;
 };
 
-export default DashboardAllJobs;
+export default DashboardAllCourse;

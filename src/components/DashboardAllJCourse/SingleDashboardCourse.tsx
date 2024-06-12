@@ -3,17 +3,17 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 
 const SingleDashboardCourse = ({
-  job,
+  course,
   onDelete,
 }: {
-  job: any;
+  course: any;
   onDelete: any;
 }) => {
-  const { _id, title, company, location, type, salary, description } = job;
+  const { _id, title, company, location, type, salary, description } = course;
   const token = localStorage.getItem("token");
 
   const handleDelete = async () => {
-    const proceedToDelete = confirm("Are sure you want to delete this Jobs ");
+    const proceedToDelete = confirm("Are sure you want to delete this Course ");
 
     if (proceedToDelete) {
       const baseUrl = getBaseUrl();
@@ -40,19 +40,19 @@ const SingleDashboardCourse = ({
   return (
     <div className="card w-full bg-base-100 shadow-xl border">
       <div className="card-body">
-        <h2 className="card-title">Job Title: {title}</h2>
+        <h2 className="card-title">Course Title: {title}</h2>
         <p>Company: {company}</p>
         <p className="font-semibold">Location: {location}</p>
-        <p>Job Type: {type}</p>
+        <p>Course Type: {type}</p>
         <p className="font-semibold">Salary: {salary}</p>
         <p>Description: {description.slice(0, 255) + "..."}</p>
         <div className="card-actions justify-end">
-          <Link href={`/jobs/view/${_id}`}>
+          <Link href={`/course/view/${_id}`}>
             <button className="btn bg-indigo-500 text-white">
               See details
             </button>
           </Link>
-          <Link href={`all-jobs/edit/${_id}`}>
+          <Link href={`all-course/edit/${_id}`}>
             <button className="btn bg-green-600 text-white">Edit</button>
           </Link>
           <button onClick={handleDelete} className="btn bg-red-500 text-white">

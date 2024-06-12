@@ -25,7 +25,7 @@ const DashboardAllCoursePage = () => {
         {jobs.map((job: any) => (
           <SingleDashboardCourse
             key={job?.id}
-            job={job}
+            course={job}
             onDelete={handleDeleteJob}
           />
         ))}

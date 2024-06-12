@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const EditCoursePage = ({ id }: { id: string }) => {
-  const [jobInfo, setJobInfo] = useState<null | any>({});
+  const [courseInfo, setCourseInfo] = useState<null | any>({});
 
   const token = localStorage.getItem("token");
 
@@ -16,9 +16,9 @@ const EditCoursePage = ({ id }: { id: string }) => {
       .then((res) => res.json())
       .then((result) => {
         if (result) {
-          setJobInfo(result);
+          setCourseInfo(result);
         } else {
-          toast.error("Job data failed to get");
+          toast.error("Course data failed to get");
         }
       });
   }, [id]);
@@ -35,7 +35,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
     const salary = form?.salary?.value;
     const description = form?.description?.value;
 
-    const jobData = {
+    const courseData = {
       title,
       company,
       type,
@@ -52,31 +52,33 @@ const EditCoursePage = ({ id }: { id: string }) => {
         Authorization: `Bearer ${token}`,
         "Content-type": "application/json",
       },
-      body: JSON.stringify(jobData),
+      body: JSON.stringify(courseData),
     })
       .then((res) => res.json())
       .then((result) => {
         if (result) {
-          toast.success("Job data updated success");
+          toast.success("Course data updated success");
         } else {
-          toast.error("Job data update failed");
+          toast.error("Course data update failed");
         }
       });
   };
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center mt-4 mb-6">Update Job</h1>
+      <h1 className="text-5xl font-bold text-center mt-4 mb-6">
+        Update Course
+      </h1>
       <div className="card shadow-xl bg-base-200">
         <div className="card-body">
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Job Title
+                  <span className="text-red-500 mr-1">*</span>Course Title
                 </span>
               </label>
               <input
-                defaultValue={jobInfo?.title}
+                defaultValue={courseInfo?.title}
                 type="text"
                 name="title"
                 placeholder="Title"
@@ -91,7 +93,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
                 </span>
               </label>
               <input
-                defaultValue={jobInfo?.company}
+                defaultValue={courseInfo?.company}
                 type="text"
                 name="company"
                 placeholder="Company Name"
@@ -106,7 +108,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
                 </span>
               </label>
               <input
-                defaultValue={jobInfo?.location}
+                defaultValue={courseInfo?.location}
                 type="text"
                 name="location"
                 placeholder="Location"
@@ -116,14 +118,14 @@ const EditCoursePage = ({ id }: { id: string }) => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Job Type
+                  <span className="text-red-500 mr-1">*</span>Course Type
                 </span>
               </label>
               <input
-                defaultValue={jobInfo?.type}
+                defaultValue={courseInfo?.type}
                 type="text"
                 name="type"
-                placeholder="Job Type"
+                placeholder="Course Type"
                 className="input input-bordered"
                 required
               />
@@ -135,7 +137,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
                 </span>
               </label>
               <input
-                defaultValue={jobInfo?.salary}
+                defaultValue={courseInfo?.salary}
                 type="text"
                 name="salary"
                 placeholder="Salary"
@@ -150,7 +152,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
                 </span>
               </label>
               <textarea
-                defaultValue={jobInfo?.description}
+                defaultValue={courseInfo?.description}
                 name="description"
                 placeholder="Description"
                 className="textarea textarea-bordered p-2"
@@ -162,7 +164,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
               <input
                 className="btn mt-4 w-full btn-primary text-white p-4"
                 type="submit"
-                value="Update Job"
+                value="Update Course"
               />
             </div>
           </form>

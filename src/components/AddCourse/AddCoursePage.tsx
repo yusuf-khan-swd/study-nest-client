@@ -4,7 +4,7 @@ import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
 import toast from "react-hot-toast";
 
-const AddJobsPage = () => {
+const AddCoursePage = () => {
   const { user } = useAuth();
   const token = localStorage.getItem("token");
 
@@ -162,4 +162,4 @@ const AddJobsPage = () => {
   );
 };
 
-export default AddJobsPage;
+export default AddCoursePage;

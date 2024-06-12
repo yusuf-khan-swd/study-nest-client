@@ -2,7 +2,13 @@ import { getBaseUrl } from "@/helpers/getBaseUrl";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
-const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
+const SingleDashboardCourse = ({
+  job,
+  onDelete,
+}: {
+  job: any;
+  onDelete: any;
+}) => {
   const { _id, title, company, location, type, salary, description } = job;
   const token = localStorage.getItem("token");
 
@@ -58,4 +64,4 @@ const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
   );
 };
 
-export default SingleDashboardJob;
+export default SingleDashboardCourse;

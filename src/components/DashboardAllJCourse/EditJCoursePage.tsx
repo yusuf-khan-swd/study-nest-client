@@ -4,7 +4,7 @@ import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const EditJobsPage = ({ id }: { id: string }) => {
+const EditCoursePage = ({ id }: { id: string }) => {
   const [jobInfo, setJobInfo] = useState<null | any>({});
 
   const token = localStorage.getItem("token");
@@ -172,4 +172,4 @@ const EditJobsPage = ({ id }: { id: string }) => {
   );
 };
 
-export default EditJobsPage;
+export default EditCoursePage;

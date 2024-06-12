@@ -1,4 +1,4 @@
-import EditJobsPage from "@/components/DashboardAllJobs/EditJobsPage";
+import EditCoursePage from "@/components/DashboardAllJCourse/EditJCoursePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ const EditJobs = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   return (
     <div>
-      <EditJobsPage id={id} />
+      <EditCoursePage id={id} />
     </div>
   );
 };

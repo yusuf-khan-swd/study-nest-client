@@ -1,7 +1,7 @@
-import DashboardAllJobsPage from "@/components/DashboardAllJobs/DashboardAllJobsPage";
+import DashboardAllCoursePage from "@/components/DashboardAllJCourse/DashboardAllCoursePage";
 
 const DashboardAllJobs = () => {
-  return <DashboardAllJobsPage />;
+  return <DashboardAllCoursePage />;
 };
 
 export default DashboardAllJobs;

@@ -1,18 +1,20 @@
 "use client";
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import useAuth from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
 import SingleDashboardCourse from "./SingleDashboardCourse";
 
 const DashboardMyCoursePage = () => {
+  const { user } = useAuth();
   const [course, setCourse] = useState<null | any>([]);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/course`)
+    fetch(`${baseUrl}/my-course?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCourse(data));
-  }, []);
+  }, [user]);
 
   const handleDeleteCourse = (id: string) => {
     setCourse(course.filter((course: any) => course._id !== id));

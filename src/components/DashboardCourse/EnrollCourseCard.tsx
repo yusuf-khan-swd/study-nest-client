@@ -69,7 +69,9 @@ const EnrollCourseCard = ({
               </button>
             </>
           ) : (
-            <button className="btn btn-accent">Enroll</button>
+            <Link href={`enroll-course/edit/${_id}`}>
+              <button className="btn btn-accent">Enroll</button>
+            </Link>
           )}
           <Link href={`/course/view/${_id}`}>
             <button className="btn bg-indigo-500 text-white">

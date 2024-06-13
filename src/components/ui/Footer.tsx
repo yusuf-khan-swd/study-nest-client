@@ -83,7 +83,7 @@ const Footer = () => {
             <a
               target="_blank"
               className="hover:link"
-              href="https://github.com/yusuf-khan-swd/thrift-store-client"
+              href="https://github.com/yusuf-khan-swd/study-nest-client"
               title="Click to view github code"
               rel="noreferrer"
             >

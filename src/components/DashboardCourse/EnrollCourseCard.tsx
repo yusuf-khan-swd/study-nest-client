@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
+// TODO: This file can be remove if not use
+
 const EnrollCourseCard = ({ id }: { id: string }) => {
   const [courseInfo, setCourseInfo] = useState<null | any>({});
 

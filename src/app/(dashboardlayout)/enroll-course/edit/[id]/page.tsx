@@ -1,18 +1,18 @@
-import EnrollCourseCard from "@/components/DashboardCourse/EnrollCourseCard";
+import PaymentPage from "@/components/DashboardCourse/PaymentPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Update Course - Study Nest",
+  title: "Payment for Course - Study Nest",
   description: "A Course Posting and Enroll Platform",
 };
 
-const EditCourse = ({ params }: { params: { id: string } }) => {
+const Payment = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   return (
     <div>
-      <EnrollCourseCard id={id} />
+      <PaymentPage id={id} />
     </div>
   );
 };
 
-export default EditCourse;
+export default Payment;

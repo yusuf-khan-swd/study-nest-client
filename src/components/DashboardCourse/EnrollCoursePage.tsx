@@ -2,7 +2,7 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
-import SingleDashboardCourse from "./SingleDashboardCourse";
+import EnrollCourseCard from "./EnrollCourseCard";
 
 const EnrollCoursePage = () => {
   const { user } = useAuth();
@@ -12,7 +12,7 @@ const EnrollCoursePage = () => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/my-course?email=${user?.email}`, {
+    fetch(`${baseUrl}/enroll`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-type": "application/json",
@@ -36,9 +36,9 @@ const EnrollCoursePage = () => {
           {course &&
             course?.length > 0 &&
             course?.map((course: any) => (
-              <SingleDashboardCourse
+              <EnrollCourseCard
                 key={course?.id}
-                course={course}
+                enrollData={course}
                 onDelete={handleDeleteCourse}
               />
             ))}

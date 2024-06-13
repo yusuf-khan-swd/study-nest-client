@@ -5,23 +5,34 @@ import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import LoadingSpinner from "../ui/LoadingSpinner";
 const DashboardPage = () => {
   const { logout, user } = useAuth();
-
   const [userInfo, setUserInfo] = useState<null | any>({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
     fetch(`${baseUrl}/users?email=${user?.email}`)
       .then((res) => res.json())
       .then((result) => {
+        setLoading(false);
         if (result?.data) {
           setUserInfo(result?.data);
         } else {
           toast.error("User data failed to get");
         }
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error?.message);
+        console.log("Error: ", error);
       });
   }, [user]);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   const handleLogout = async () => {
     await logout();

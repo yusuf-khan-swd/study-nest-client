@@ -1,3 +1,5 @@
+"use client";
+
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";

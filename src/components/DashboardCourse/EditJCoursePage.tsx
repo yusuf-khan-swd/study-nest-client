@@ -66,10 +66,10 @@ const EditCoursePage = ({ id }: { id: string }) => {
   };
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center mt-4 mb-6">
+      <h1 className="text-xl sm:text-3xl font-bold text-center mt-4 mb-6">
         Update Course
       </h1>
-      <div className="card shadow-xl bg-base-200">
+      <div className="card shadow-xl bg-base-200 m-2">
         <div className="card-body">
           <form onSubmit={handleSubmit}>
             <div className="form-control">

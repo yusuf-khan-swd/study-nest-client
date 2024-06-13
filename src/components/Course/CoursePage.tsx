@@ -2,11 +2,14 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import LoadingSpinner from "../ui/LoadingSpinner";
 import CourseCard from "./CourseCard";
 
 const CoursePage = () => {
   const [course, setCourse] = useState<null | any>([]);
   const [prevCourse, setPrevCourse] = useState<null | any>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
@@ -16,8 +19,18 @@ const CoursePage = () => {
       .then((data) => {
         setCourse(data);
         setPrevCourse(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error?.message);
+        console.log("Error: ", error);
       });
   }, []);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   // Search is case sensitive
   const handleSearch = (value: any) => {

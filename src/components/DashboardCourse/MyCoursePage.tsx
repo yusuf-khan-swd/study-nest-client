@@ -4,7 +4,7 @@ import useAuth from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
 import SingleDashboardCourse from "./SingleDashboardCourse";
 
-const DashboardMyCoursePage = () => {
+const MyCoursePage = () => {
   const { user } = useAuth();
   const [course, setCourse] = useState<null | any>([]);
   const token = localStorage.getItem("token");
@@ -48,4 +48,4 @@ const DashboardMyCoursePage = () => {
   );
 };
 
-export default DashboardMyCoursePage;
+export default MyCoursePage;

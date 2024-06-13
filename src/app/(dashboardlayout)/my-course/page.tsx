@@ -1,7 +1,7 @@
-import DashboardMyCoursePage from "@/components/DashboardCourse/DashboardMyCourse";
+import MyCoursePage from "@/components/DashboardCourse/MyCoursePage";
 
-const DashboardMyCourse = () => {
-  return <DashboardMyCoursePage />;
+const MyCourse = () => {
+  return <MyCoursePage />;
 };
 
-export default DashboardMyCourse;
+export default MyCourse;

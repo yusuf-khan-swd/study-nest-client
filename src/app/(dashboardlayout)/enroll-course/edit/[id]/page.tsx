@@ -1,4 +1,4 @@
-import EditCoursePage from "@/components/DashboardCourse/EditJCoursePage";
+import EnrollCourseCard from "@/components/DashboardCourse/EnrollCourseCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ const EditCourse = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   return (
     <div>
-      <EditCoursePage id={id} />
+      <EnrollCourseCard id={id} />
     </div>
   );
 };

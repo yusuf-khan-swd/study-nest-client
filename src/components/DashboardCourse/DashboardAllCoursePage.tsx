@@ -1,18 +1,33 @@
 "use client";
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import LoadingSpinner from "../ui/LoadingSpinner";
 import SingleDashboardCourse from "./SingleDashboardCourse";
 
 const DashboardAllCoursePage = () => {
   const [course, setCourse] = useState<null | any>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
     fetch(`${baseUrl}/course`)
       .then((res) => res.json())
-      .then((data) => setCourse(data));
+      .then((data) => {
+        setCourse(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error?.message);
+        console.log("Error: ", error);
+      });
   }, []);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   const handleDeleteCourse = (id: string) => {
     setCourse(course.filter((course: any) => course._id !== id));

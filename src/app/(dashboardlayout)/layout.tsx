@@ -23,6 +23,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         <Link href="/dashboard">Dashboard</Link>
       </li>
       <li>
+        <Link href="/enroll-course">Enroll Course</Link>
+      </li>
+      <li>
         <Link href="/all-course">All Course</Link>
       </li>
       <li>

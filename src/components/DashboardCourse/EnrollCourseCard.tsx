@@ -1,34 +1,44 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
-import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-// TODO: This file can be remove if not use
-
-const EnrollCourseCard = ({ id }: { id: string }) => {
-  const [courseInfo, setCourseInfo] = useState<null | any>({});
-
-  const { user } = useAuth();
-
-  const { _id, email, title, duration, instructor, price, description } =
-    courseInfo;
-
+const EnrollCourseCard = ({
+  enrollData,
+  onDelete,
+}: {
+  enrollData: any;
+  onDelete: any;
+}) => {
   const token = localStorage.getItem("token");
 
-  useEffect(() => {
-    const baseUrl = getBaseUrl();
+  const { _id, title, duration, instructor, price, description } =
+    enrollData?.course;
 
-    fetch(`${baseUrl}/course/${id}`)
-      .then((res) => res.json())
-      .then((result) => {
-        if (result) {
-          setCourseInfo(result);
-        } else {
-          toast.error("Course data failed to get");
-        }
+  const handleDelete = async () => {
+    const proceedToDelete = confirm("Are sure you want to delete this Course ");
+
+    if (proceedToDelete) {
+      const baseUrl = getBaseUrl();
+
+      const res = await fetch(`${baseUrl}/course/${_id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
-  }, [id]);
+      const result = await res.json();
+      console.log(result);
+
+      if (result?.data) {
+        toast.success("Product deleted successfully");
+      } else {
+        toast.error("Product deleted failed");
+        console.log("error: ", result);
+      }
+
+      onDelete(_id);
+    }
+  };
 
   return (
     <div className="card w-full bg-base-100 shadow-xl border">
@@ -44,10 +54,9 @@ const EnrollCourseCard = ({ id }: { id: string }) => {
             : description?.slice(0, 255) + "..."}
         </p>
         <div className="card-actions justify-end">
-          <Link href={`enroll-course/edit/${_id}`}>
-            <button className="btn btn-accent">Enroll</button>
-          </Link>
-
+          <button onClick={handleDelete} className="btn bg-red-500 text-white">
+            Delete
+          </button>
           <Link href={`/course/view/${_id}`}>
             <button className="btn bg-indigo-500 text-white">
               See details

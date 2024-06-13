@@ -87,13 +87,15 @@ const CheckOutForm = ({ course }: { course: any }) => {
         courseId: _id,
       };
 
+      const data = { payment, course };
+
       fetch(`${baseUrl}/payments`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
           authorization: `bearer ${token}`,
         },
-        body: JSON.stringify(payment),
+        body: JSON.stringify(data),
       })
         .then((res) => res.json())
         .then((data) => {

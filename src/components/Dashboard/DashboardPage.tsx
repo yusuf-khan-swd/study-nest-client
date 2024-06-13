@@ -42,9 +42,9 @@ const DashboardPage = () => {
           Edit Profile
         </Link>
       </div>
-      <div className="hero bg-base-200 p-2 md:p-8">
+      <div className="hero bg-base-200 p-2 sm:p-8">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form className="card-body p-6 sm:p-8">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>

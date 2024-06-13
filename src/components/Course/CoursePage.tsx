@@ -53,7 +53,7 @@ const CoursePage = () => {
         </label>
         <input
           type="text"
-          placeholder="e.g Software"
+          placeholder="e.g Python"
           className="input input-bordered"
           onChange={(e: any) => handleSearch(e.target.value)}
         />

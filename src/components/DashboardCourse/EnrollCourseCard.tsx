@@ -20,7 +20,7 @@ const EnrollCourseCard = ({
     if (proceedToDelete) {
       const baseUrl = getBaseUrl();
 
-      const res = await fetch(`${baseUrl}/course/${_id}`, {
+      const res = await fetch(`${baseUrl}/enroll/${_id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -29,7 +29,7 @@ const EnrollCourseCard = ({
       const result = await res.json();
       console.log(result);
 
-      if (result?.data) {
+      if (result?.deletedCount > 0) {
         toast.success("Product deleted successfully");
       } else {
         toast.error("Product deleted failed");

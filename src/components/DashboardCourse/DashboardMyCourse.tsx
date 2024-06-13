@@ -7,11 +7,17 @@ import SingleDashboardCourse from "./SingleDashboardCourse";
 const DashboardMyCoursePage = () => {
   const { user } = useAuth();
   const [course, setCourse] = useState<null | any>([]);
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/my-course?email=${user?.email}`)
+    fetch(`${baseUrl}/my-course?email=${user?.email}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, [user]);

@@ -18,8 +18,7 @@ const CheckOutForm = ({ course }: { course: any }) => {
   const stripe = useStripe();
   const elements = useElements();
 
-  const { _id, email, title, duration, instructor, price, description } =
-    course;
+  const { _id, title, price } = course;
 
   const baseUrl = getBaseUrl();
 

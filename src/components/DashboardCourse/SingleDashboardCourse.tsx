@@ -28,13 +28,14 @@ const SingleDashboardCourse = ({
           Authorization: `Bearer ${token}`,
         },
       });
-      const data = await res.json();
-      console.log(data);
+      const result = await res.json();
+      console.log(result);
 
-      if (data) {
+      if (result?.data) {
         toast.success("Product deleted successfully");
       } else {
         toast.error("Product deleted failed");
+        console.log("error: ", result);
       }
 
       onDelete(_id);

@@ -14,7 +14,7 @@ const CourseCard = ({ course }: { course: any }) => {
           Description:{" "}
           {description?.length < 250
             ? description
-            : description.slice(0, 255) + "..."}
+            : description?.slice(0, 255) + "..."}
         </p>
         <div className="card-actions justify-end">
           <Link href={`/course/view/${_id}`}>

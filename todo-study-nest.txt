@@ -1,4 +1,6 @@
 
+Create getToken() and setToken() function with token enum with token name
+
 [solved] - After deploy frontend there is cors error
 
 Done - Configure frontend and backed of the project. And deploy both fronted and backend to vercel 

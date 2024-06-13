@@ -36,7 +36,7 @@ const EnrollCourseCard = ({
         console.log("error: ", result);
       }
 
-      onDelete(_id);
+      onDelete(enrollData?._id);
     }
   };
 

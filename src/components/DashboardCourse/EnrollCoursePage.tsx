@@ -2,7 +2,7 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
-import EnrollCourseCard from "./EnrollCourseCard";
+import SingleDashboardCourse from "./SingleDashboardCourse";
 
 const EnrollCoursePage = () => {
   const { user } = useAuth();
@@ -36,7 +36,7 @@ const EnrollCoursePage = () => {
           {course &&
             course?.length > 0 &&
             course?.map((course: any) => (
-              <EnrollCourseCard
+              <SingleDashboardCourse
                 key={course?.id}
                 course={course}
                 onDelete={handleDeleteCourse}

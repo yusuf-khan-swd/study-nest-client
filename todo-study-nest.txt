@@ -1,4 +1,7 @@
 
+After deploy payment function is not working properly pay button is disable
+ I have try by adding stripe client key to vercel client env and also backend 
+
 Create getToken() and setToken() function with token enum with token name
 
 [solved] - After deploy frontend there is cors error

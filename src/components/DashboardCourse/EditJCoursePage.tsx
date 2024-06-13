@@ -56,10 +56,11 @@ const EditCoursePage = ({ id }: { id: string }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result) {
+        if (result?.data) {
           toast.success("Course data updated success");
         } else {
           toast.error("Course data update failed");
+          console.log("error: ", result);
         }
       });
   };

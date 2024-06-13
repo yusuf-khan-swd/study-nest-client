@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 const ViewCoursePage = ({ id }: { id: string }) => {
   const [courseInfo, setCourseInfo] = useState<null | any>({});
 
-  const { title, company, location, type, salary, description } = courseInfo;
+  const { title, duration, instructor, price, description } = courseInfo;
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
@@ -28,11 +28,15 @@ const ViewCoursePage = ({ id }: { id: string }) => {
       <div className="card w-full bg-base-100 shadow-xl border">
         <div className="card-body">
           <h2 className="card-title">Course Title: {title}</h2>
-          <p>Company: {company}</p>
-          <p className="font-semibold">Location: {location}</p>
-          <p>Course Type: {type}</p>
-          <p className="font-semibold">Salary: {salary}</p>
-          <p>Description: {description}</p>
+          <p>Duration: {duration}</p>
+          <p className="font-semibold">Instructor: {instructor}</p>
+          <p className="font-semibold">Price: ${price}</p>
+          <p>
+            Description:{" "}
+            {description?.length < 250
+              ? description
+              : description.slice(0, 255) + "..."}
+          </p>
           <div className="card-actions justify-end"></div>
         </div>
       </div>

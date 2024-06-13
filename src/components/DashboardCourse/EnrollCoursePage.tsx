@@ -2,12 +2,15 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import LoadingSpinner from "../ui/LoadingSpinner";
 import EnrollCourseCard from "./EnrollCourseCard";
 
 const EnrollCoursePage = () => {
   const { user } = useAuth();
   const [course, setCourse] = useState<null | any>([]);
   const token = localStorage.getItem("token");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
@@ -19,8 +22,20 @@ const EnrollCoursePage = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setCourse(data));
+      .then((data) => {
+        setCourse(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error?.message);
+        console.log("Error: ", error);
+      });
   }, [user, token]);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   const handleDeleteCourse = (id: string) => {
     setCourse(course.filter((course: any) => course._id !== id));

@@ -27,13 +27,15 @@ const DashboardMyCoursePage = () => {
         <h2 className="text-center text-2xl my-3">No course available</h2>
       ) : (
         <div className="mb-16 flex justify-center flex-wrap gap-4">
-          {course.map((course: any) => (
-            <SingleDashboardCourse
-              key={course?.id}
-              course={course}
-              onDelete={handleDeleteCourse}
-            />
-          ))}
+          {course &&
+            course?.length > 0 &&
+            course?.map((course: any) => (
+              <SingleDashboardCourse
+                key={course?.id}
+                course={course}
+                onDelete={handleDeleteCourse}
+              />
+            ))}
         </div>
       )}
     </div>

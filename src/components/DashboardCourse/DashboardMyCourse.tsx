@@ -20,7 +20,7 @@ const DashboardMyCoursePage = () => {
     })
       .then((res) => res.json())
       .then((data) => setCourse(data));
-  }, [user]);
+  }, [user, token]);
 
   const handleDeleteCourse = (id: string) => {
     setCourse(course.filter((course: any) => course._id !== id));

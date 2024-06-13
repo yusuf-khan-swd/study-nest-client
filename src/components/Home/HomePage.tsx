@@ -2,21 +2,36 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import CourseCard from "../Course/CourseCard";
 import Banner from "../ui/Banner";
 import Features from "../ui/Features";
+import LoadingSpinner from "../ui/LoadingSpinner";
 import Statics from "../ui/Statics";
 
 const HomePage = () => {
   const [course, setCourse] = useState<null | any>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
     fetch(`${baseUrl}/course`)
       .then((res) => res.json())
-      .then((data) => setCourse(data));
+      .then((data) => {
+        setCourse(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error?.message);
+        console.log("Error: ", error);
+      });
   }, []);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div>

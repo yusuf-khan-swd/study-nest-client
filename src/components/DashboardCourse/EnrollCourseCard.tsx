@@ -20,7 +20,7 @@ const EnrollCourseCard = ({
     if (proceedToDelete) {
       const baseUrl = getBaseUrl();
 
-      const res = await fetch(`${baseUrl}/enroll/${_id}`, {
+      const res = await fetch(`${baseUrl}/enroll/${enrollData?._id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

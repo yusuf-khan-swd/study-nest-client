@@ -1,7 +1,7 @@
-import MyCoursePage from "@/components/DashboardCourse/MyCoursePage";
+import EnrollCoursePage from "@/components/DashboardCourse/EnrollCoursePage";
 
 const EnrollCourse = () => {
-  return <MyCoursePage />;
+  return <EnrollCoursePage />;
 };
 
 export default EnrollCourse;

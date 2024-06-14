@@ -1,4 +1,6 @@
 
+update EditProfile title
+
 create a reusable handleLogout() function for handling logout
 
 Done - After deploy payment function is not working properly pay button is disable

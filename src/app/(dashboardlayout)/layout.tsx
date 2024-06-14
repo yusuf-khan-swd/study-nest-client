@@ -1,6 +1,7 @@
 "use client";
 
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import { removeTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
@@ -40,7 +41,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const handleLogout = async () => {
     await logout();
     toast.success("Logout success");
-    localStorage.removeItem("token");
+    removeTokenFromLocalStorage();
   };
 
   return (

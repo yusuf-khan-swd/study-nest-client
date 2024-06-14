@@ -4,10 +4,12 @@ import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { getTokenFromLocalStorage } from "@/helpers/token";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
 const EditCoursePage = ({ id }: { id: string }) => {
   const [courseInfo, setCourseInfo] = useState<null | any>({});
   const token = getTokenFromLocalStorage();
+  const [loading, setLoading] = useState(true);
 
   const { title, duration, instructor, price, description } = courseInfo;
 
@@ -17,13 +19,23 @@ const EditCoursePage = ({ id }: { id: string }) => {
     fetch(`${baseUrl}/course/${id}`)
       .then((res) => res.json())
       .then((result) => {
+        setLoading(false);
         if (result) {
           setCourseInfo(result);
         } else {
           toast.error("Course data failed to get");
         }
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error?.message);
+        console.log("Error: ", error);
       });
   }, [id]);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -64,6 +76,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
         }
       });
   };
+
   return (
     <div>
       <h1 className="text-xl sm:text-3xl font-bold text-center mt-4 mb-6">

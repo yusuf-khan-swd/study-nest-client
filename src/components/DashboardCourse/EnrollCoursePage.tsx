@@ -1,5 +1,6 @@
 "use client";
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { getTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -9,7 +10,7 @@ import EnrollCourseCard from "./EnrollCourseCard";
 const EnrollCoursePage = () => {
   const { user } = useAuth();
   const [course, setCourse] = useState<null | any>([]);
-  const token = localStorage.getItem("token");
+  const token = getTokenFromLocalStorage();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

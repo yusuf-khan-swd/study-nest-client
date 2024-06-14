@@ -1,6 +1,7 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { removeTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -37,7 +38,7 @@ const DashboardPage = () => {
   const handleLogout = async () => {
     await logout();
     toast.success("Logout success");
-    localStorage.removeItem("token");
+    removeTokenFromLocalStorage();
   };
 
   return (

@@ -1,4 +1,5 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { getTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useRouter } from "next/navigation";
@@ -8,7 +9,7 @@ import toast from "react-hot-toast";
 const CheckOutForm = ({ course }: { course: any }) => {
   const { user } = useAuth();
   const router = useRouter();
-  const token = localStorage.getItem("token");
+  const token = getTokenFromLocalStorage();
 
   const [clientSecret, setClientSecret] = useState("");
   const [isDataLoading, setIsDataLoading] = useState(false);

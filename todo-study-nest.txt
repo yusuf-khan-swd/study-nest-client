@@ -1,7 +1,7 @@
 
 Done - add loading to EditProfile, EditCoursePage, ViewCoursePage and check other fetch is there any missing loading in fetch
 
-update EditProfile title
+Done - update EditProfile title
 
 create a reusable handleLogout() function for handling logout
 

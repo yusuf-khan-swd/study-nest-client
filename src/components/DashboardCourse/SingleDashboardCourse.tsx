@@ -1,4 +1,5 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { getTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
 import toast from "react-hot-toast";
@@ -11,10 +12,10 @@ const SingleDashboardCourse = ({
   onDelete: any;
 }) => {
   const { user } = useAuth();
+  const token = getTokenFromLocalStorage();
 
   const { _id, email, title, duration, instructor, price, description } =
     course;
-  const token = localStorage.getItem("token");
 
   const handleDelete = async () => {
     const proceedToDelete = confirm("Are sure you want to delete this Course ");

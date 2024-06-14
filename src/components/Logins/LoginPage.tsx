@@ -1,6 +1,7 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { setTokenToLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import { FirebaseError } from "firebase/app";
 import Link from "next/link";
@@ -40,7 +41,7 @@ const LoginPage = () => {
             .then((result) => {
               if (result?.data) {
                 toast.success("Login Success");
-                localStorage.setItem("token", result?.data?.token);
+                setTokenToLocalStorage(result?.data?.token);
                 router.push("/");
               } else {
                 toast.error("Login Failed!");

@@ -1,13 +1,13 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { getTokenFromLocalStorage } from "@/helpers/token";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const EditUserProfilePage = ({ id }: { id: string }) => {
   const [userInfo, setUserInfo] = useState<null | any>({});
-
-  const token = localStorage.getItem("token");
+  const token = getTokenFromLocalStorage();
 
   useEffect(() => {
     const baseUrl = getBaseUrl();

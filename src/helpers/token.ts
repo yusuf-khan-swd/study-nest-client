@@ -1,7 +1,7 @@
 const TOKEN_KEY = "token";
 
 export const setToken = (token: string) => {
-  localStorage.setItem(TOKEN_KEY, token);
+  return localStorage.setItem(TOKEN_KEY, token);
 };
 
 export const getToken = () => {

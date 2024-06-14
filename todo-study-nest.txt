@@ -1,4 +1,6 @@
 
+create a reusable handleLogout() function for handling logout
+
 Done - After deploy payment function is not working properly pay button is disable
  I have try by adding stripe frontend key to vercel frontend env and also backend 
 [solved] - After adding frontend stripe private key to vercel then deploy again after that payment method is working. 

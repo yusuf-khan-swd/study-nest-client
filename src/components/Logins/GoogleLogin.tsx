@@ -1,4 +1,5 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { setTokenToLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import { FirebaseError } from "firebase/app";
 import { useRouter } from "next/navigation";
@@ -31,7 +32,7 @@ const GoogleLogin = () => {
             .then((result) => {
               if (result?.data) {
                 toast.success("Google Login Success");
-                localStorage.setItem("token", result?.data?.token);
+                setTokenToLocalStorage(result?.data?.token);
                 router.push("/");
               } else {
                 toast.error("Login Failed!");

@@ -1,12 +1,13 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { getTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import toast from "react-hot-toast";
 
 const AddCoursePage = () => {
   const { user } = useAuth();
-  const token = localStorage.getItem("token");
+  const token = getTokenFromLocalStorage();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

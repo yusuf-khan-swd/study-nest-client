@@ -1,4 +1,6 @@
 
+add loading to EditProfile and check other fetch is there any missing loading in fetch
+
 update EditProfile title
 
 create a reusable handleLogout() function for handling logout

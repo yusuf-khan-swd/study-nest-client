@@ -1,15 +1,15 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { getTokenFromLocalStorage } from "@/helpers/token";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const EditCoursePage = ({ id }: { id: string }) => {
   const [courseInfo, setCourseInfo] = useState<null | any>({});
+  const token = getTokenFromLocalStorage();
 
   const { title, duration, instructor, price, description } = courseInfo;
-
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const baseUrl = getBaseUrl();

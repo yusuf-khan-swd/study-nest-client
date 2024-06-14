@@ -1,5 +1,5 @@
 
-add loading to EditProfile and check other fetch is there any missing loading in fetch
+Done - add loading to EditProfile, EditCoursePage, ViewCoursePage and check other fetch is there any missing loading in fetch
 
 update EditProfile title
 

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../ui/LoadingSpinner";
+
 const DashboardPage = () => {
   const { logout, user } = useAuth();
   const [userInfo, setUserInfo] = useState<null | any>({});

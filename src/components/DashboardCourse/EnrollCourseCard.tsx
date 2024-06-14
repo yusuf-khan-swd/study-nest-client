@@ -1,4 +1,5 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { getTokenFromLocalStorage } from "@/helpers/token";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
@@ -9,7 +10,7 @@ const EnrollCourseCard = ({
   enrollData: any;
   onDelete: any;
 }) => {
-  const token = localStorage.getItem("token");
+  const token = getTokenFromLocalStorage();
 
   const { _id, title, duration, instructor, price, description } =
     enrollData?.course;

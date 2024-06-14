@@ -3,9 +3,11 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
 const ViewCoursePage = ({ id }: { id: string }) => {
   const [courseInfo, setCourseInfo] = useState<null | any>({});
+  const [loading, setLoading] = useState(true);
 
   const { title, duration, instructor, price, description } = courseInfo;
 
@@ -15,13 +17,23 @@ const ViewCoursePage = ({ id }: { id: string }) => {
     fetch(`${baseUrl}/course/${id}`)
       .then((res) => res.json())
       .then((result) => {
+        setLoading(false);
         if (result) {
           setCourseInfo(result);
         } else {
           toast.error("Course data failed to get");
         }
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error?.message);
+        console.log("Error: ", error);
       });
   }, [id]);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="m-2">

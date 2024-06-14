@@ -4,10 +4,12 @@ import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { getTokenFromLocalStorage } from "@/helpers/token";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
 const EditUserProfilePage = ({ id }: { id: string }) => {
   const [userInfo, setUserInfo] = useState<null | any>({});
   const token = getTokenFromLocalStorage();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
@@ -19,13 +21,23 @@ const EditUserProfilePage = ({ id }: { id: string }) => {
     })
       .then((res) => res.json())
       .then((result) => {
+        setLoading(false);
         if (result?.data) {
           setUserInfo(result?.data);
         } else {
           toast.error("User data failed to get");
         }
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error?.message);
+        console.log("Error: ", error);
       });
   }, [id, token]);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -57,6 +69,7 @@ const EditUserProfilePage = ({ id }: { id: string }) => {
         }
       });
   };
+
   return (
     <div>
       <h1 className="text-3xl font-semibold text-center mb-4">

@@ -3,7 +3,7 @@ Done - add loading to EditProfile, EditCoursePage, ViewCoursePage and check othe
 
 Done - update EditProfile title
 
-create a reusable handleLogout() function for handling logout
+Not Work - create a reusable handleLogout() hooks function for handling logout
 
 Done - After deploy payment function is not working properly pay button is disable
  I have try by adding stripe frontend key to vercel frontend env and also backend 

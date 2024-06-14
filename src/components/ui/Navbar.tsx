@@ -1,5 +1,6 @@
 "use client";
 
+import { removeTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     await logout();
     toast.success("Logout success");
-    localStorage.removeItem("token");
+    removeTokenFromLocalStorage();
   };
 
   const menuItems = (

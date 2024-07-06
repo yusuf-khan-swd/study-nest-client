@@ -13,7 +13,7 @@ const LoginPage = () => {
   const { signIn, user } = useAuth();
   const router = useRouter();
 
-  const handleSUbmit = async (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     const form = e.target;
@@ -56,7 +56,7 @@ const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={handleSUbmit} className="hero min-h-[80vh] bg-base-200">
+    <form onSubmit={handleSubmit} className="hero min-h-[80vh] bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse max-w-[1040px] mx-auto">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>

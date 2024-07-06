@@ -89,7 +89,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl" href="/">
+        <a className="btn btn-ghost text-lg sm:text-xl" href="/">
           {websiteName}
         </a>
       </div>

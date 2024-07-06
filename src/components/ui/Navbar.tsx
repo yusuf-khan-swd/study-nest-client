@@ -37,20 +37,27 @@ const Navbar = () => {
       <li>
         <Link href="/contact">Contact Us</Link>
       </li>
-      {!user && (
-        <>
-          <li>
-            <Link href="/login">Login</Link>
-          </li>
-          <li>
-            <Link href="/register">Register</Link>
-          </li>
-        </>
-      )}
       {user && (
         <li>
           <Link href="/dashboard">Dashboard</Link>
         </li>
+      )}
+    </>
+  );
+
+  const loginMenuItems = (
+    <>
+      {!user && (
+        <>
+          <button className="border rounded-lg mr-2">
+            <Link className="btn btn-sm sm:btn-md btn-ghost" href="/register">
+              Register
+            </Link>
+          </button>
+          <button className="btn btn-sm sm:btn-md btn-primary">
+            <Link href="/login">Login</Link>
+          </button>
+        </>
       )}
     </>
   );
@@ -90,6 +97,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{menuItems}</ul>
       </div>
       <div className="navbar-end">
+        {loginMenuItems}
         {user && (
           <>
             <button

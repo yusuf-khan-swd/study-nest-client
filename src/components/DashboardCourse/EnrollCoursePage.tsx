@@ -24,7 +24,7 @@ const EnrollCoursePage = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setCourse(data);
+        setCourse(data?.data);
         setLoading(false);
       })
       .catch((error) => {

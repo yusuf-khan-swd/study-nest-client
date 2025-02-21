@@ -22,7 +22,7 @@ const PaymentPage = ({ id }: { id: string }) => {
       .then((result) => {
         setLoading(false);
         if (result) {
-          setCourseInfo(result);
+          setCourseInfo(result?.data);
         } else {
           toast.error("Course data failed to get");
         }

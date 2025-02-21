@@ -23,6 +23,7 @@ const CoursePage = () => {
       })
       .catch((error) => {
         setLoading(false);
+        setCourse([]);
         toast.error(error?.message);
         console.log("Error: ", error);
       });

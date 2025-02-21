@@ -19,7 +19,7 @@ const HomePage = () => {
     fetch(`${baseUrl}/courses`)
       .then((res) => res.json())
       .then((data) => {
-        setCourse(data);
+        setCourse(data?.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -33,8 +33,6 @@ const HomePage = () => {
   if (loading) {
     return <LoadingSpinner />;
   }
-
-  console.log("course result", course);
 
   return (
     <div>

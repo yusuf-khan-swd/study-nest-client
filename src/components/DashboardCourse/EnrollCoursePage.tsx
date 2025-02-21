@@ -16,7 +16,7 @@ const EnrollCoursePage = () => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/enroll`, {
+    fetch(`${baseUrl}/enrolls`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-type": "application/json",

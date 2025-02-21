@@ -1,6 +1,12 @@
 
+--------------------------- 7:37 PM 2/21/2025
+
+8:15 PM 2/21/2025 - All the packages installed in the project and run project successfully
+
 7:37 PM 2/21/2025 - Start connecting update server with MVC Pattern to local client side
 
+
+---------------------------
 Done - add loading to EditProfile, EditCoursePage, ViewCoursePage and check other fetch is there any missing loading in fetch
 
 Done - update EditProfile title

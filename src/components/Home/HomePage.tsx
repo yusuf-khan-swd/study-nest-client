@@ -33,6 +33,8 @@ const HomePage = () => {
     return <LoadingSpinner />;
   }
 
+  console.log("course result", course);
+
   return (
     <div>
       <Banner />
@@ -43,7 +45,7 @@ const HomePage = () => {
             <h2 className="text-center text-2xl my-3">No course available</h2>
           ) : (
             <div className="grid grid-cols-1 gap-4">
-              {course.slice(0, 2).map((course: any) => (
+              {course?.slice(0, 2).map((course: any) => (
                 <CourseCard key={course?.id} course={course} />
               ))}
             </div>

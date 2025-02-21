@@ -39,9 +39,10 @@ const LoginPage = () => {
           })
             .then((res) => res.json())
             .then((result) => {
+              console.log(result);
               if (result?.data) {
                 toast.success("Login Success");
-                setTokenToLocalStorage(result?.data?.token);
+                setTokenToLocalStorage(result?.data?.accessToken);
                 router.push("/");
               } else {
                 toast.error("Login Failed!");

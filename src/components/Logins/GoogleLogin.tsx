@@ -30,9 +30,10 @@ const GoogleLogin = () => {
           })
             .then((res) => res.json())
             .then((result) => {
+              console.log(result);
               if (result?.data) {
                 toast.success("Google Login Success");
-                setTokenToLocalStorage(result?.data?.token);
+                setTokenToLocalStorage(result?.data?.accessToken);
                 router.push("/");
               } else {
                 toast.error("Login Failed!");

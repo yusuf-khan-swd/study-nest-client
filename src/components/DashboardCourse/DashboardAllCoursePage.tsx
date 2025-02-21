@@ -12,7 +12,7 @@ const DashboardAllCoursePage = () => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/course`)
+    fetch(`${baseUrl}/courses`)
       .then((res) => res.json())
       .then((data) => {
         setCourse(data);

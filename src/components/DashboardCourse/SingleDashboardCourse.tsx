@@ -23,7 +23,7 @@ const SingleDashboardCourse = ({
     if (proceedToDelete) {
       const baseUrl = getBaseUrl();
 
-      const res = await fetch(`${baseUrl}/course/${_id}`, {
+      const res = await fetch(`${baseUrl}/courses/${_id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

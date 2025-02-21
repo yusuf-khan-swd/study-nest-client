@@ -36,7 +36,7 @@ const AddCoursePage = () => {
 
       const baseUrl = getBaseUrl();
 
-      const res = await fetch(`${baseUrl}/course`, {
+      const res = await fetch(`${baseUrl}/courses`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

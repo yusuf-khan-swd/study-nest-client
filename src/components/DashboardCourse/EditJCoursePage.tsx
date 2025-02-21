@@ -16,7 +16,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/course/${id}`)
+    fetch(`${baseUrl}/courses/${id}`)
       .then((res) => res.json())
       .then((result) => {
         setLoading(false);
@@ -58,7 +58,7 @@ const EditCoursePage = ({ id }: { id: string }) => {
 
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/course/${id}`, {
+    fetch(`${baseUrl}/courses/${id}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,

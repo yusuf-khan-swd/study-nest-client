@@ -1,6 +1,8 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { getUserInfo } from "@/services/auth.service";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../ui/LoadingSpinner";
@@ -10,6 +12,8 @@ const ViewCoursePage = ({ id }: { id: string }) => {
   const [loading, setLoading] = useState(true);
 
   const { title, duration, instructor, price, description } = courseInfo;
+
+  const { role } = getUserInfo();
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
@@ -49,7 +53,13 @@ const ViewCoursePage = ({ id }: { id: string }) => {
               ? description
               : description?.slice(0, 255) + "..."}
           </p>
-          <div className="card-actions justify-end"></div>
+          <div className="card-actions justify-start mt-2">
+            {role === "user" && (
+              <Link href={`enroll-course/edit/${id}`}>
+                <button className="btn btn-accent">Enroll</button>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>

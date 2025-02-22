@@ -4,6 +4,14 @@
 **2. [Github Server Side Repository](https://github.com/yusuf-khan-swd/study-nest-server)** \
 **3. [Live Website](https://studynestweb.vercel.app/)**
 
+## Logins Credential
+
+User Email: user@studynest.com \
+Password: 123456
+
+Admin Email: admin@studynest.com \
+Password: 123456
+
 ## Features
 
 - Course Listings: Allow admin to add new course with course details such as course title, duration, instructor, price, description,.

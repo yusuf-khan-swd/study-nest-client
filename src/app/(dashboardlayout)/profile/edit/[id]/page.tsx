@@ -2,8 +2,8 @@ import EditUserProfilePage from "@/components/Profile/EditUserProfilePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Update User Profile - Renovator",
-  description: "A Home Renovation Service Provider",
+  title: "Update User Profile - StudyNest",
+  description: "Learning Platform for students",
 };
 
 const EditUserProfile = ({ params }: { params: { id: string } }) => {

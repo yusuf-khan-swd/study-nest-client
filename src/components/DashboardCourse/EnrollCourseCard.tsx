@@ -16,7 +16,9 @@ const EnrollCourseCard = ({
     enrollData?.course;
 
   const handleDelete = async () => {
-    const proceedToDelete = confirm("Are sure you want to delete this Course ");
+    const proceedToDelete = confirm(
+      "Are sure you want to delete this Enrolled Course"
+    );
 
     if (proceedToDelete) {
       const baseUrl = getBaseUrl();
@@ -28,12 +30,11 @@ const EnrollCourseCard = ({
         },
       });
       const result = await res.json();
-      console.log(result);
 
-      if (result?.deletedCount > 0) {
-        toast.success("Product deleted successfully");
+      if (result?.success) {
+        toast.success("Enrolled Course deleted successfully");
       } else {
-        toast.error("Product deleted failed");
+        toast.error("Enrolled Course deleted failed");
         console.log("error: ", result);
       }
 

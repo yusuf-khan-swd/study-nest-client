@@ -1,5 +1,6 @@
 "use client";
 
+import { USER_ROLE } from "@/constant/role";
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { getUserInfo } from "@/services/auth.service";
 import Link from "next/link";
@@ -54,7 +55,7 @@ const ViewCoursePage = ({ id }: { id: string }) => {
               : description?.slice(0, 255) + "..."}
           </p>
           <div className="card-actions justify-start mt-2">
-            {role === "user" && (
+            {role === USER_ROLE.USER && (
               <Link href={`enroll-course/edit/${id}`}>
                 <button className="btn btn-accent">Enroll</button>
               </Link>

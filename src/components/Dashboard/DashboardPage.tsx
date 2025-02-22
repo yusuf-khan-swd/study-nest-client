@@ -1,7 +1,10 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
-import { removeTokenFromLocalStorage } from "@/helpers/token";
+import {
+  getTokenFromLocalStorage,
+  removeTokenFromLocalStorage,
+} from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -12,12 +15,21 @@ const DashboardPage = () => {
   const { logout, user } = useAuth();
   const [userInfo, setUserInfo] = useState<null | any>({});
   const [loading, setLoading] = useState(true);
+  const token = getTokenFromLocalStorage();
+
+  console.log("user auth", user);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
-    fetch(`${baseUrl}/users?email=${user?.email}`)
+    fetch(`${baseUrl}/users/profile?email=${user?.email}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         setLoading(false);
         if (result?.data) {
           setUserInfo(result?.data);

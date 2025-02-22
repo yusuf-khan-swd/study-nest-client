@@ -42,7 +42,7 @@ const DashboardPage = () => {
         toast.error(error?.message);
         console.log("Error: ", error);
       });
-  }, [user]);
+  }, [user, token]);
 
   if (loading) {
     return <LoadingSpinner />;

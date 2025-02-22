@@ -1,4 +1,4 @@
-import EditUserProfilePage from "@/components/UserProfile/EditUserProfilePage";
+import EditUserProfilePage from "@/components/Profile/EditUserProfilePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

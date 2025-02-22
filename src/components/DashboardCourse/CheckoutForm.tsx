@@ -1,6 +1,6 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
-import { getTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
+import { getTokenFromLocalStorage } from "@/utils/token";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

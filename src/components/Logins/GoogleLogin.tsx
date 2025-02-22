@@ -1,6 +1,6 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
-import { setTokenToLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
+import { setTokenToLocalStorage } from "@/utils/token";
 import { FirebaseError } from "firebase/app";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";

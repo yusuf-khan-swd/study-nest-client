@@ -1,8 +1,8 @@
 "use client";
 
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
-import { removeTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
+import { removeTokenFromLocalStorage } from "@/utils/token";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

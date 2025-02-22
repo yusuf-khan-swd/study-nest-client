@@ -1,8 +1,8 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
-import { getTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
+import { getTokenFromLocalStorage } from "@/utils/token";
 import toast from "react-hot-toast";
 
 const AddCoursePage = () => {

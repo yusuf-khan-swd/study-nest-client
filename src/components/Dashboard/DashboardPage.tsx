@@ -1,11 +1,11 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import useAuth from "@/hooks/useAuth";
 import {
   getTokenFromLocalStorage,
   removeTokenFromLocalStorage,
-} from "@/helpers/token";
-import useAuth from "@/hooks/useAuth";
+} from "@/utils/token";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";

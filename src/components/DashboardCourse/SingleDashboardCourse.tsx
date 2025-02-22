@@ -1,6 +1,6 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
-import { getTokenFromLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
+import { getTokenFromLocalStorage } from "@/utils/token";
 import Link from "next/link";
 import toast from "react-hot-toast";
 

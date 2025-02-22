@@ -1,8 +1,8 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
-import { setTokenToLocalStorage } from "@/helpers/token";
 import useAuth from "@/hooks/useAuth";
+import { setTokenToLocalStorage } from "@/utils/token";
 import { FirebaseError } from "firebase/app";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

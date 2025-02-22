@@ -2,6 +2,7 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
+import { decodedToken } from "@/utils/jwt";
 import {
   getTokenFromLocalStorage,
   removeTokenFromLocalStorage,
@@ -16,6 +17,9 @@ const DashboardPage = () => {
   const [userInfo, setUserInfo] = useState<null | any>({});
   const [loading, setLoading] = useState(true);
   const token = getTokenFromLocalStorage();
+
+  const decodeToken = decodedToken(token as string);
+  console.log("decodeToken", decodeToken);
 
   useEffect(() => {
     const baseUrl = getBaseUrl();

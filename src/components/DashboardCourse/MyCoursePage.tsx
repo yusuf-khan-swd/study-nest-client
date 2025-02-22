@@ -16,7 +16,7 @@ const MyCoursePage = () => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/my-course?email=${user?.email}`, {
+    fetch(`${baseUrl}/admin-courses`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-type": "application/json",
@@ -24,7 +24,7 @@ const MyCoursePage = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setCourse(data);
+        setCourse(data?.data);
         setLoading(false);
       })
       .catch((error) => {

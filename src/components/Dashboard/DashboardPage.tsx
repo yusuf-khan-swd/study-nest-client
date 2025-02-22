@@ -17,8 +17,6 @@ const DashboardPage = () => {
   const [loading, setLoading] = useState(true);
   const token = getTokenFromLocalStorage();
 
-  console.log("user auth", user);
-
   useEffect(() => {
     const baseUrl = getBaseUrl();
     fetch(`${baseUrl}/users/profile?email=${user?.email}`, {
@@ -29,7 +27,6 @@ const DashboardPage = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         setLoading(false);
         if (result?.data) {
           setUserInfo(result?.data);

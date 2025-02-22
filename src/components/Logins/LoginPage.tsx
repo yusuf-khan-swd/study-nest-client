@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import GoogleLogin from "./GoogleLogin";
 
 const LoginPage = () => {
-  const { signIn, user } = useAuth();
+  const { signIn } = useAuth();
   const router = useRouter();
 
   const handleSubmit = async (e: any) => {

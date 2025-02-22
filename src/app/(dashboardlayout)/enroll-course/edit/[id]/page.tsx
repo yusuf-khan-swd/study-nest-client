@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: "A Course Posting and Enroll Platform",
 };
 
+// TODO: change folder name edit to payment for page
+
 const Payment = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   return (

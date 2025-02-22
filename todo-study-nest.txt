@@ -1,7 +1,7 @@
 
 --------------------------- 10:55 AM 2/22/2025
 
-Start integrate /enrolls and /payments route to client side
+[9:57 PM 2/22/2025 Done] - Start integrate /enrolls and /payments route to client side
 
 [7:46 PM 2/22/2025 Done] - Fully integrate /users and /course route to the client side
 

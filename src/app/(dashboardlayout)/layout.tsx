@@ -1,7 +1,9 @@
 "use client";
 
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import { USER_ROLE } from "@/constant/role";
 import useAuth from "@/hooks/useAuth";
+import { getUserInfo } from "@/services/auth.service";
 import { removeTokenFromLocalStorage } from "@/utils/local-storage";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,23 +20,33 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 
   if (!user) return router.push("/login");
 
+  const { role } = getUserInfo();
+
   const dashboardItems = (
     <>
       <li>
         <Link href="/dashboard">Dashboard</Link>
       </li>
-      <li>
-        <Link href="/all-course">All Course</Link>
-      </li>
-      <li>
-        <Link href="/my-course">My Course</Link>
-      </li>
-      <li>
-        <Link href="/enroll-course">Enroll Course</Link>
-      </li>
-      <li>
-        <Link href="/add-course">Add Course</Link>
-      </li>
+      {role === USER_ROLE.USER && (
+        <>
+          <li>
+            <Link href="/all-course">All Course</Link>
+          </li>
+          <li>
+            <Link href="/enroll-course">Enroll Course</Link>
+          </li>
+        </>
+      )}
+      {role === USER_ROLE.ADMIN && (
+        <>
+          <li>
+            <Link href="/my-course">My Course</Link>
+          </li>
+          <li>
+            <Link href="/add-course">Add Course</Link>
+          </li>
+        </>
+      )}
     </>
   );
 

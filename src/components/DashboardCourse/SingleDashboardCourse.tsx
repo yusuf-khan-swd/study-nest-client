@@ -33,9 +33,9 @@ const SingleDashboardCourse = ({
       console.log(result);
 
       if (result?.data) {
-        toast.success("Product deleted successfully");
+        toast.success("Course deleted successfully");
       } else {
-        toast.error("Product deleted failed");
+        toast.error("Course deleted failed");
         console.log("error: ", result);
       }
 
@@ -57,23 +57,13 @@ const SingleDashboardCourse = ({
             : description?.slice(0, 255) + "..."}
         </p>
         <div className="card-actions justify-end">
-          {user?.email === email ? (
-            <>
-              <Link href={`all-course/edit/${_id}`}>
-                <button className="btn bg-green-600 text-white">Edit</button>
-              </Link>
-              <button
-                onClick={handleDelete}
-                className="btn bg-red-500 text-white"
-              >
-                Delete
-              </button>
-            </>
-          ) : (
-            <Link href={`enroll-course/edit/${_id}`}>
-              <button className="btn btn-accent">Enroll</button>
-            </Link>
-          )}
+          <Link href={`all-course/edit/${_id}`}>
+            <button className="btn bg-green-600 text-white">Edit</button>
+          </Link>
+          <button onClick={handleDelete} className="btn bg-red-500 text-white">
+            Delete
+          </button>
+
           <Link href={`/course/view/${_id}`}>
             <button className="btn bg-indigo-500 text-white">
               See details

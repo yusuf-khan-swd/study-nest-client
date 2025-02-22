@@ -1,5 +1,7 @@
+import { USER_ROLE } from "@/constant/role";
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
+import { getUserInfo } from "@/services/auth.service";
 import { getTokenFromLocalStorage } from "@/utils/local-storage";
 import Link from "next/link";
 import toast from "react-hot-toast";
@@ -16,6 +18,8 @@ const SingleDashboardCourse = ({
 
   const { _id, email, title, duration, instructor, price, description } =
     course;
+
+  const { role } = getUserInfo();
 
   const handleDelete = async () => {
     const proceedToDelete = confirm("Are sure you want to delete this Course ");
@@ -57,12 +61,24 @@ const SingleDashboardCourse = ({
             : description?.slice(0, 255) + "..."}
         </p>
         <div className="card-actions justify-end">
-          <Link href={`all-course/edit/${_id}`}>
-            <button className="btn bg-green-600 text-white">Edit</button>
-          </Link>
-          <button onClick={handleDelete} className="btn bg-red-500 text-white">
-            Delete
-          </button>
+          {role === USER_ROLE.USER && (
+            <Link href={`enroll-course/edit/${_id}`}>
+              <button className="btn btn-accent">Enroll</button>
+            </Link>
+          )}
+          {role === USER_ROLE.ADMIN && (
+            <>
+              <Link href={`all-course/edit/${_id}`}>
+                <button className="btn bg-green-600 text-white">Edit</button>
+              </Link>
+              <button
+                onClick={handleDelete}
+                className="btn bg-red-500 text-white"
+              >
+                Delete
+              </button>
+            </>
+          )}
 
           <Link href={`/course/view/${_id}`}>
             <button className="btn bg-indigo-500 text-white">

@@ -84,10 +84,8 @@ const CheckOutForm = ({ course }: { course: any }) => {
         price: price,
         transactionId: paymentIntent.id,
         email: user?.email,
-        courseId: _id,
+        course: _id,
       };
-
-      const data = { payment, course };
 
       fetch(`${baseUrl}/payments`, {
         method: "POST",
@@ -95,17 +93,19 @@ const CheckOutForm = ({ course }: { course: any }) => {
           "content-type": "application/json",
           authorization: `bearer ${token}`,
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payment),
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.acknowledged) {
+          if (data.success) {
             toast.success("Payment Done");
             setSuccess("Congrats!! Your payment completed.");
             setTransactionId(paymentIntent.id);
             setIsDataLoading(false);
             setCardError(false);
             router.push("/enroll-course");
+          } else {
+            toast.error("Payment Failed");
           }
         })
         .catch((error) => {

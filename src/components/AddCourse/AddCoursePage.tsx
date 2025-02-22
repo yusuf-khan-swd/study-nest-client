@@ -2,7 +2,7 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
-import { getTokenFromLocalStorage } from "@/utils/token";
+import { getTokenFromLocalStorage } from "@/utils/local-storage";
 import toast from "react-hot-toast";
 
 const AddCoursePage = () => {

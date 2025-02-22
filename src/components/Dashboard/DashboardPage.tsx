@@ -5,7 +5,7 @@ import useAuth from "@/hooks/useAuth";
 import {
   getTokenFromLocalStorage,
   removeTokenFromLocalStorage,
-} from "@/utils/token";
+} from "@/utils/local-storage";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";

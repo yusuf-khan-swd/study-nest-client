@@ -2,7 +2,7 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
-import { setTokenToLocalStorage } from "@/utils/token";
+import { setTokenToLocalStorage } from "@/utils/local-storage";
 import { FirebaseError } from "firebase/app";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

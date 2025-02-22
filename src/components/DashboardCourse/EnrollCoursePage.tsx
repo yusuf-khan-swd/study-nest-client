@@ -1,7 +1,7 @@
 "use client";
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
-import { getTokenFromLocalStorage } from "@/utils/token";
+import { getTokenFromLocalStorage } from "@/utils/local-storage";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../ui/LoadingSpinner";

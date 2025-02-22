@@ -1,7 +1,7 @@
 "use client";
 
 import useAuth from "@/hooks/useAuth";
-import { removeTokenFromLocalStorage } from "@/utils/token";
+import { removeTokenFromLocalStorage } from "@/utils/local-storage";
 import Image from "next/image";
 import Link from "next/link";
 import toast from "react-hot-toast";

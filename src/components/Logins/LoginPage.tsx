@@ -79,6 +79,7 @@ const LoginPage = () => {
                   placeholder="email"
                   className="input input-bordered"
                   name="email"
+                  defaultValue="user@studynest.com"
                   required
                 />
               </div>
@@ -91,6 +92,7 @@ const LoginPage = () => {
                   placeholder="password"
                   className="input input-bordered"
                   name="password"
+                  defaultValue="123456"
                   required
                 />
               </div>

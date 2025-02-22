@@ -94,6 +94,18 @@ const DashboardPage = () => {
                 required
               />
             </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Role</span>
+              </label>
+              <input
+                type="role"
+                placeholder="role"
+                className="input input-bordered"
+                value={userInfo?.role}
+                required
+              />
+            </div>
             <div className="form-control mt-6">
               <button
                 onClick={handleLogout}

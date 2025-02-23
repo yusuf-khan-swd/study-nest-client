@@ -62,13 +62,13 @@ const SingleDashboardCourse = ({
         </p>
         <div className="card-actions justify-end">
           {role === USER_ROLE.USER && (
-            <Link href={`enroll-course/edit/${_id}`}>
+            <Link href={`/enroll-course/edit/${_id}`}>
               <button className="btn btn-accent">Enroll</button>
             </Link>
           )}
           {role === USER_ROLE.ADMIN && (
             <>
-              <Link href={`all-course/edit/${_id}`}>
+              <Link href={`/all-course/edit/${_id}`}>
                 <button className="btn bg-green-600 text-white">Edit</button>
               </Link>
               <button

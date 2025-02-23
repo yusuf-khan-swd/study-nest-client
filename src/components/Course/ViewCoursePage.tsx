@@ -56,7 +56,7 @@ const ViewCoursePage = ({ id }: { id: string }) => {
           </p>
           <div className="card-actions justify-start mt-2">
             {role === USER_ROLE.USER && (
-              <Link href={`enroll-course/edit/${id}`}>
+              <Link href={`/enroll-course/edit/${id}`}>
                 <button className="btn btn-accent">Enroll</button>
               </Link>
             )}

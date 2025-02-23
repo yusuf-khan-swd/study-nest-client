@@ -1,4 +1,8 @@
 
+--------------------------- 11:39 AM 2/23/2025
+
+[11:48 AM 2/23/2025 Done] - Connect test deploy server to client side and check all the routes are working properly
+
 --------------------------- 10:55 AM 2/22/2025
 
 [9:57 PM 2/22/2025 Done] - Start integrate /enrolls and /payments route to client side

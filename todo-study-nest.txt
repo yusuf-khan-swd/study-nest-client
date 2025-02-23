@@ -1,6 +1,8 @@
 
 --------------------------- 11:39 AM 2/23/2025
 
+[11:56 AM 2/23/2025 Done] - Connect original deploy server to client side and check routes are working properly
+
 [11:48 AM 2/23/2025 Done] - Connect test deploy server to client side and check all the routes are working properly
 
 --------------------------- 10:55 AM 2/22/2025

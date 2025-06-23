@@ -1,4 +1,6 @@
 
+Testing local project connect with github
+
 --------------------------- 11:39 AM 2/23/2025
 
 [12:07 PM 2/23/2025 Done] - Deploy client side to vercel original domain and check all the routes are working properly
